@@ -22,3 +22,15 @@ app.listen(3000, ()=>console.log("Server Running"));
 app.get("/", (req, res) => {
   res.send("Ludo Server Running 🚀");
 });
+
+
+
+const path = require("path");
+
+// frontend serve
+app.use(express.static(path.join(__dirname)));
+
+// homepage
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
