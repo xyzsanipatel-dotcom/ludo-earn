@@ -15,3 +15,10 @@ app.use("/game", require("./routes/game"));
 app.use("/admin", require("./routes/admin"));
 
 app.listen(3000, ()=>console.log("Server Running"));
+
+
+
+
+app.get("/", (req, res) => {
+  res.send("Ludo Server Running 🚀");
+});
