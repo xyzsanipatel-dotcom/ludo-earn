@@ -1,0 +1,14 @@
+<h2>Play Ludo</h2>
+<button onclick="join()">Join ₹10 Game</button>
+
+<script>
+function join(){
+  fetch("/game/join", {
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body: JSON.stringify({ userId: "USER_ID" })
+  })
+  .then(r=>r.text())
+  .then(alert);
+}
+</script>
